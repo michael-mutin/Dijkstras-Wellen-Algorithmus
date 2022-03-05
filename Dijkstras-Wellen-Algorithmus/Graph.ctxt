@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Graph
+comment0.text=\r\n\ implementiert\ einen\ Graphen\ mit\ Kanten\ und\ Knoten\r\n\ \r\n\ @author\ Michael\ Mutin\ \r\n\ @version\ 0.1\r\n
+comment1.params=
+comment1.target=Graph()
+comment2.params=kn
+comment2.target=void\ knotenHinzuf\u00FCgen(Knoten)
+comment3.params=kn
+comment3.target=void\ knotenEntfernen(Knoten)
+comment4.params=ka
+comment4.target=void\ kanteHinzuf\u00FCgen(Kante)
+comment5.params=ka
+comment5.target=void\ kanteEntfernen(Kante)
+comment6.params=
+comment6.target=java.util.HashSet\ gibKnotenmenge()
+comment7.params=
+comment7.target=java.util.HashSet\ gibKantenmenge()
+numComments=8

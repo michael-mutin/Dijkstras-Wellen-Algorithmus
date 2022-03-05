@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Kante
+comment0.text=\r\n\ implementiert\ eine\ Kante,\ die\ 2\ Knoten\ miteinander\ verbindet\r\n\ \r\n\ @author\ Michael\ Mutin\r\n\ @version\ 0.1\r\n
+comment1.params=knoten1\ knoten2
+comment1.target=Kante(Knoten,\ Knoten)
+comment2.params=knoten1\ knoten2\ gewicht
+comment2.target=Kante(Knoten,\ Knoten,\ int)
+comment3.params=
+comment3.target=int\ gibGewicht()
+comment4.params=
+comment4.target=Knoten\ gibKnoten1()
+comment5.params=
+comment5.target=Knoten\ gibKnoten2()
+numComments=6

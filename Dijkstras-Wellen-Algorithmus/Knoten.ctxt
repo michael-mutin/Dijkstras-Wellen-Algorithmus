@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Knoten
+comment0.text=\r\n\ implementiert\ einen\ Knoten\ eines\ Graphen\r\n\ \r\n\ @author\ Michael\ Mutin\ \r\n\ @version\ 0.1\r\n
+comment1.params=
+comment1.target=Knoten()
+comment2.params=nachbar
+comment2.target=void\ fuegeNachbarHinzu(Knoten)
+comment3.params=nachbar
+comment3.target=void\ entferneNachbarn(Knoten)
+numComments=4

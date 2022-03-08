@@ -3,12 +3,12 @@ import java.util.*;
  * implementiert einen Graphen mit Kanten und Knoten
  * 
  * @author Michael Mutin 
- * @version 0.1
+ * @version 0.2
  */
 public class Graph
 {
     private HashSet<Knoten> _knotenmenge;
-    private HashSet<Kante> _kantenmenge;
+    private HashSet<Verbindung> _kantenmenge;
     
     public Graph()
     {
@@ -25,7 +25,7 @@ public class Graph
     {
         _knotenmenge.remove(kn);
 
-        for(Kante k : _kantenmenge)
+        for(Verbindung k : _kantenmenge)
         {
             if(k.gibKnoten1() == kn || k.gibKnoten2() == kn)
             {
@@ -34,11 +34,11 @@ public class Graph
         }
     }
     
-    public void kanteHinzufügen(Kante ka)
+    public void kanteHinzufügen(Verbindung ka)
     {
         boolean kanteBereitsEnthalten = false;
         
-        for(Kante k : _kantenmenge)
+        for(Verbindung k : _kantenmenge)
         {
             if(k.gibKnoten1() == ka.gibKnoten1() && k.gibKnoten2() == ka.gibKnoten2() || k.gibKnoten1() == ka.gibKnoten2() && k.gibKnoten2() == ka.gibKnoten1())
             {
@@ -55,7 +55,7 @@ public class Graph
         }
     }
     
-    public void kanteEntfernen(Kante ka)
+    public void kanteEntfernen(Verbindung ka)
     {
         if(_kantenmenge.remove(ka))
         {
@@ -69,7 +69,7 @@ public class Graph
         return _knotenmenge;
     }
     
-    public HashSet<Kante> gibKantenmenge()
+    public HashSet<Verbindung> gibKantenmenge()
     {
         return _kantenmenge;
     }

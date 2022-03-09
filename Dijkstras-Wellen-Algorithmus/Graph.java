@@ -1,26 +1,39 @@
-import java.util.*;
+ import java.util.*;
 /**
  * implementiert einen Graphen mit Kanten und Knoten
  * 
  * @author Michael Mutin 
- * @version 0.2
+ * @version 1.0
  */
 public class Graph
 {
     private HashSet<Knoten> _knotenmenge;
     private HashSet<Verbindung> _kantenmenge;
     
+    /**
+     * erstellt einen leeren Graphen
+     */
     public Graph()
     {
         _knotenmenge = new HashSet();
         _kantenmenge = new HashSet();
     }
     
-    public void knotenHinzufügen(Knoten kn)
+    /**
+     * fügt einen Knoten hinzu, falls dieser noch nicht Teil des Graphen ist
+     * 
+     * @param kn Knoten, der hinzugefügt werden soll
+     */
+    public void knotenHinzufuegen(Knoten kn)
     {
         _knotenmenge.add(kn);
     }
     
+    /**
+     * entfernt einen Knoten aus dem Graphen
+     * 
+     * @param kn Knoten, der entfernt werden soll
+     */
     public void knotenEntfernen(Knoten kn)
     {
         _knotenmenge.remove(kn);
@@ -34,7 +47,12 @@ public class Graph
         }
     }
     
-    public void kanteHinzufügen(Verbindung ka)
+    /**
+     * fügt eine Kante hinzu, falls zwischen den jeweiligen Knoten noch keine Kante existiert
+     * 
+     * @param ka Kante, die hinzugefügt werden soll
+     */
+    public void kanteHinzufuegen(Verbindung ka)
     {
         boolean kanteBereitsEnthalten = false;
         
@@ -55,6 +73,11 @@ public class Graph
         }
     }
     
+    /**
+     * entfernt eine Kante
+     * 
+     * @param Kante, die entfernt werden soll
+     */
     public void kanteEntfernen(Verbindung ka)
     {
         if(_kantenmenge.remove(ka))
@@ -63,12 +86,22 @@ public class Graph
             ka.gibKnoten2().entferneNachbarn(ka.gibKnoten1());
         }
     }
-    
+
+    /**
+     * gibt die Menge der Knoten zurück
+     * 
+     * @return die Knotenmenge
+     */
     public HashSet<Knoten> gibKnotenmenge()
     {
         return _knotenmenge;
     }
     
+    /**
+     * gibt die Menge der Kanten zurück
+     * 
+     * @return die Kantenmenge
+     */
     public HashSet<Verbindung> gibKantenmenge()
     {
         return _kantenmenge;

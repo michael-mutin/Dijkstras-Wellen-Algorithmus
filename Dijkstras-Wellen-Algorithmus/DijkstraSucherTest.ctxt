@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=DijkstraSucherTest
+comment0.text=\r\n\ Die\ Test-Klasse\ DijkstraSucherTest.\r\n\r\n\ @author\ \ Michael\ Mutin\r\n\ @version\ 0.1\r\n
+comment1.params=
+comment1.target=DijkstraSucherTest()
+comment1.text=\r\n\ Konstruktor\ fuer\ die\ Test-Klasse\ DijkstraSucherTest\r\n
+comment2.params=
+comment2.target=void\ dreiKnotenTest()
+comment3.params=
+comment3.target=void\ schnelltest()
+comment4.params=
+comment4.target=void\ vorlesungsbeispiel()
+comment5.params=
+comment5.target=void\ setUp()
+comment5.text=\r\n\ \ Setzt\ das\ Testger\u00FCst\ fuer\ den\ Test.\r\n\r\n\ Wird\ vor\ jeder\ Testfall-Methode\ aufgerufen.\r\n
+comment6.params=
+comment6.target=void\ tearDown()
+comment6.text=\r\n\ Gibt\ das\ Testger\u00FCst\ wieder\ frei.\r\n\r\n\ Wird\ nach\ jeder\ Testfall-Methode\ aufgerufen.\r\n
+numComments=7

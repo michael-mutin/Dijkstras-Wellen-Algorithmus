@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=VerbindungsComparator
+comment0.text=\r\n\ vergleicht\ Verbindungen\ nach\ ihrem\ Gewicht\r\n\ \r\n\ @author\ Michael\ Mutin\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=VerbindungsComparator()
+comment2.params=v1\ v2
+comment2.target=int\ compare(Verbindung,\ Verbindung)
+numComments=3

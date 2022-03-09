@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.target=Verbindung
-comment0.text=\r\n\ implementiert\ eine\ Verbindung\ zwischen\ 2\ Knoten\r\n\ \r\n\ @author\ Michael\ Mutin\r\n\ @version\ 0.2\r\n
+comment0.text=\r\n\ implementiert\ eine\ Verbindung\ zwischen\ 2\ Knoten\r\n\ \r\n\ @author\ Michael\ Mutin\r\n\ @version\ 1.0\r\n
 comment1.params=knoten1\ knoten2
 comment1.target=Verbindung(Knoten,\ Knoten)
+comment1.text=\r\n\ erstellt\ eine\ Verbindung\ zwischen\ 2\ Knoten.\ Die\ Verbindung\ hat\ ein\ Gewicht\ von\ 1\r\n\ \r\n\ @param\ knoten1\ der\ erste\ Knoten\r\n\ @param\ knoten2\ der\ zweite\ Knoten\r\n
 comment2.params=knoten1\ knoten2\ gewicht
 comment2.target=Verbindung(Knoten,\ Knoten,\ int)
+comment2.text=\r\n\ erstellet\ eine\ Verbindung\ zwischen\ 2\ Knoten.\ Das\ Verbindungsgewicht\ ist\ mit\ anzugeben\r\n\ \r\n\ @param\ knoten1\ der\ erste\ Knoten\r\n\ @param\ knoten2\ der\ zweite\ Knoten\r\n\ @param\ gewicht\ das\ Gewicht\ der\ Verbindung\r\n
 comment3.params=
 comment3.target=int\ gibGewicht()
+comment3.text=\r\n\ gibt\ das\ Gewicht\ der\ Verbindung\ zur\u00FCck\r\n\ \r\n\ @return\ das\ Gewicht\ der\ Verbindung\r\n
 comment4.params=
 comment4.target=Knoten\ gibKnoten1()
+comment4.text=\r\n\ gibt\ den\ ersten\ Knoten\ der\ Verbindung\ zur\u00FCck\r\n\ \r\n\ @return\ der\ erste\ Knoten\ der\ Verbindung\r\n
 comment5.params=
 comment5.target=Knoten\ gibKnoten2()
+comment5.text=\r\n\ gibt\ den\ zweiten\ Knoten\ der\ Verbindung\ zur\u00FCck\r\n\ \r\n\ @return\ der\ zweite\ Knoten\ der\ Verbindung\r\n
 numComments=6

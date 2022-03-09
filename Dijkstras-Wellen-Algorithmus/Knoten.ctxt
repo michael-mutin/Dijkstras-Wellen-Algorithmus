@@ -1,10 +1,16 @@
 #BlueJ class context
 comment0.target=Knoten
-comment0.text=\r\n\ implementiert\ einen\ Knoten\ eines\ Graphen\r\n\ \r\n\ @author\ Michael\ Mutin\ \r\n\ @version\ 0.1\r\n
+comment0.text=\r\n\ implementiert\ einen\ Knoten\ eines\ Graphen\r\n\ \r\n\ @author\ Michael\ Mutin\ \r\n\ @version\ 1.0\r\n
 comment1.params=
 comment1.target=Knoten()
+comment1.text=\r\n\ erstellt\ einen\ Knoten\ ohne\ Nachbarn\r\n
 comment2.params=nachbar
 comment2.target=void\ fuegeNachbarHinzu(Knoten)
+comment2.text=\r\n\ f\u00FCgt\ einen\ Nachbarn\ hinzu\r\n\ \r\n\ @param\ nachbar\ Nachbar,\ der\ hinzugef\u00FCgt\ werden\ soll\r\n
 comment3.params=nachbar
 comment3.target=void\ entferneNachbarn(Knoten)
-numComments=4
+comment3.text=\r\n\ entfernt\ einen\ Nachbarn\r\n\ \r\n\ @param\ nachbar\ Nachbar,\ der\ entfernt\ werden\ soll\r\n
+comment4.params=
+comment4.target=java.util.HashSet\ gibDirekteNachbarn()
+comment4.text=\r\n\ gibt\ die\ Menge\ der\ Nachbarn\ zur\u00FCck\r\n\ \r\n\ @return\ die\ Menge\ der\ Nachbarn\r\n
+numComments=5

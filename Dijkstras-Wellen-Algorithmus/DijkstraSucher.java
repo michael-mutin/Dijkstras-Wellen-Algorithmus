@@ -5,7 +5,7 @@ import java.util.Collections;
  * DijkstraSucher findet mithilfe von Dijkstras Wellen-Algorithmus die kürzeste Verbindung zwischen 2 Knoten
  * 
  * @author Michael Mutin
- * @version 1.0
+ * @version 1.0.1
  */
 public class DijkstraSucher
 {
@@ -17,6 +17,7 @@ public class DijkstraSucher
     private LinkedList<Verbindung> _randliste;
     private HashSet<Knoten> _unerreichteKnotenMenge;
     
+    private HashSet<Knoten> _gewaehlteKnotenMenge;
     private HashSet<Knoten> _randknotenmenge;
     private Verbindung _aktuelleVerbindung;
 
@@ -36,6 +37,7 @@ public class DijkstraSucher
         _randliste = new LinkedList();
         _unerreichteKnotenMenge = new HashSet();
         _randknotenmenge = new HashSet();
+        _gewaehlteKnotenMenge = new HashSet();
     }
     
     /**
@@ -52,16 +54,49 @@ public class DijkstraSucher
             Knoten nextRandknoten = _aktuelleVerbindung.gibKnoten1();
             _randknotenmenge.remove(nextRandknoten);
             _gewaehltMenge.add(_aktuelleVerbindung);
+            _gewaehlteKnotenMenge.add(_aktuelleVerbindung.gibKnoten1());
             if(nextRandknoten == _zielknoten)
             {
-                return _aktuelleVerbindung.gibGewicht();
+                int weglaenge = _aktuelleVerbindung.gibGewicht();
+                gibWegAus();
+                return weglaenge;
             }
             else
             {
                 randlisteAktualisieren();
             }
         }
+        System.out.println("Kein Weg gefunden");
         return -1;
+    }
+    
+    /**
+     * schreibt den Weg auf die Konsole
+     */
+    private void gibWegAus()
+    {
+        String wegString = " Gesamtlaenge: " + _aktuelleVerbindung.gibGewicht();
+        Knoten aktuellerKnoten = _aktuelleVerbindung.gibKnoten1();
+        Knoten vorgaengerKnoten = _aktuelleVerbindung.gibKnoten2();
+        
+        while(aktuellerKnoten != vorgaengerKnoten)
+        {
+            wegString = " --" + sucheNachKantengewicht(aktuellerKnoten, vorgaengerKnoten) + "-- " + aktuellerKnoten.gibName() + wegString;
+            aktuellerKnoten = vorgaengerKnoten;
+            
+            for(Verbindung gewaehlteVerbindung : _gewaehltMenge)
+            {
+                if(gewaehlteVerbindung.gibKnoten1() == aktuellerKnoten)
+                {
+                    _aktuelleVerbindung = gewaehlteVerbindung;
+                    vorgaengerKnoten = _aktuelleVerbindung.gibKnoten2();
+                    break;
+                }
+            }
+        }
+        
+        wegString = aktuellerKnoten.gibName() + wegString;
+        System.out.println(wegString);
     }
     
     /**
@@ -76,6 +111,7 @@ public class DijkstraSucher
         
         Verbindung initialVerbindung = new Verbindung(_startknoten, _startknoten, 0);
         _gewaehltMenge.add(initialVerbindung);
+        _gewaehlteKnotenMenge.add(_startknoten);
         _aktuelleVerbindung = initialVerbindung;
         
         randlisteAktualisieren();
@@ -90,29 +126,32 @@ public class DijkstraSucher
         
         for(Knoten nachbar : aktuellerKnoten.gibDirekteNachbarn())
         {
-            int verbindungsgewicht = sucheNachKantengewicht(nachbar, aktuellerKnoten) + _aktuelleVerbindung.gibGewicht();
-            
-            if(istInRandknotenmenge(nachbar))
+            if(!_gewaehlteKnotenMenge.contains(nachbar))
             {
-                for(Verbindung randVerbindung : _randliste)
+                int verbindungsgewicht = sucheNachKantengewicht(nachbar, aktuellerKnoten) + _aktuelleVerbindung.gibGewicht();
+                if(istInRandknotenmenge(nachbar))
                 {
-                    if(randVerbindung.gibKnoten1() == nachbar)
+                    for(Verbindung randVerbindung : _randliste)
                     {
-                        if(randVerbindung.gibGewicht() > verbindungsgewicht)
+                        if(randVerbindung.gibKnoten1() == nachbar)
                         {
-                            Verbindung kuerzereVerbindung = new Verbindung(nachbar, aktuellerKnoten, verbindungsgewicht);
-                            int austauschStelle = _randliste.indexOf(randVerbindung);
-                            _randliste.set(austauschStelle, kuerzereVerbindung);
+                            if(randVerbindung.gibGewicht() > verbindungsgewicht)
+                            {
+                                Verbindung kuerzereVerbindung = new Verbindung(nachbar, aktuellerKnoten, verbindungsgewicht);
+                                int austauschStelle = _randliste.indexOf(randVerbindung);
+                                _randliste.set(austauschStelle, kuerzereVerbindung);
+                            }
+                            break;
                         }
-                        break;
-                    }
+                }
+                }
+                else
+                {
+                    _randknotenmenge.add(nachbar);
+                    _randliste.add(new Verbindung(nachbar, aktuellerKnoten, verbindungsgewicht));
                 }
             }
-            else
-            {
-                _randknotenmenge.add(nachbar);
-                _randliste.add(new Verbindung(nachbar, aktuellerKnoten, verbindungsgewicht));
-            }
+            
             randlisteSortieren();
         }
     }

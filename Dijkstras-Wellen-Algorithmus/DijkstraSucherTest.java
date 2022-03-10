@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
  * Die Test-Klasse DijkstraSucherTest.
  *
  * @author  Michael Mutin
- * @version 0.1
  */
 public class DijkstraSucherTest
 {
@@ -25,9 +24,9 @@ public class DijkstraSucherTest
     {
         Graph dreiKnotenGraph = new Graph();
         
-        Knoten alpha = new Knoten();
-        Knoten beta = new Knoten();
-        Knoten gamma = new Knoten();
+        Knoten alpha = new Knoten("alpha");
+        Knoten beta = new Knoten("beta");
+        Knoten gamma = new Knoten("gamma");
         Verbindung ab = new Verbindung(alpha,beta,7);
         Verbindung bg = new Verbindung(beta, gamma, 9);
         
@@ -46,8 +45,8 @@ public class DijkstraSucherTest
     {
         Graph schnellGraph = new Graph();
         
-        Knoten x = new Knoten();
-        Knoten y = new Knoten();
+        Knoten x = new Knoten("x");
+        Knoten y = new Knoten("y");
         Verbindung xy = new Verbindung(x,y,3);
         
         schnellGraph.knotenHinzufuegen(x);
@@ -55,7 +54,7 @@ public class DijkstraSucherTest
         schnellGraph.kanteHinzufuegen(xy);
         
         DijkstraSucher dijSchnell = new DijkstraSucher(schnellGraph, x, y);
-        assertEquals(2, dijSchnell.wegFinden());
+        assertEquals(3, dijSchnell.wegFinden());
     }
     
     @Test
@@ -63,17 +62,17 @@ public class DijkstraSucherTest
     {
         Graph testGraph = new Graph();
         
-        Knoten a = new Knoten();
-        Knoten b = new Knoten();
-        Knoten c = new Knoten();
-        Knoten d = new Knoten();
-        Knoten e = new Knoten();
-        Knoten f = new Knoten();
-        Knoten g = new Knoten();
-        Knoten h = new Knoten();
-        Knoten i = new Knoten();
-        Knoten s = new Knoten();
-        Knoten z = new Knoten();
+        Knoten a = new Knoten("a");
+        Knoten b = new Knoten("b");
+        Knoten c = new Knoten("c");
+        Knoten d = new Knoten("d");
+        Knoten e = new Knoten("e");
+        Knoten f = new Knoten("f");
+        Knoten g = new Knoten("g");
+        Knoten h = new Knoten("h");
+        Knoten i = new Knoten("i");
+        Knoten s = new Knoten("s");
+        Knoten z = new Knoten("z");
         
         testGraph.knotenHinzufuegen(a);
         testGraph.knotenHinzufuegen(b);

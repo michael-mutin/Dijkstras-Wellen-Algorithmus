@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=DijkstraSucherTest
-comment0.text=\r\n\ Die\ Test-Klasse\ DijkstraSucherTest.\r\n\r\n\ @author\ \ Michael\ Mutin\r\n\ @version\ 0.1\r\n
+comment0.text=\r\n\ Die\ Test-Klasse\ DijkstraSucherTest.\r\n\r\n\ @author\ \ Michael\ Mutin\r\n
 comment1.params=
 comment1.target=DijkstraSucherTest()
 comment1.text=\r\n\ Konstruktor\ fuer\ die\ Test-Klasse\ DijkstraSucherTest\r\n
